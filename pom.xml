@@ -1,0 +1,66 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>python-project</artifactId>
+    <version>1.0.0</version>
+    <name>Python Project</name>
+    <description>A Maven project for running Python scripts</description>
+    <url>https://github.com/example/python-project</url>
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <id>developer1</id>
+            <name>John Doe</name>
+            <email>john.doe@example.com</email>
+            <url>https://github.com/johndoe</url>
+            <organization>Example Organization</organization>
+            <organizationUrl>https://www.example.com</organizationUrl>
+            <roles>
+                <role>developer</role>
+            </roles>
+        </developer>
+    </developers>
+    <scm>
+        <connection>scm:git:https://github.com/example/python-project.git</connection>
+        <developerConnection>scm:git:git@github.com:example/python-project.git</developerConnection>
+        <url>https://github.com/example/python-project</url>
+    </scm>
+    <issueManagement>
+        <system>GitHub Issues</system>
+        <url>https://github.com/example/python-project/issues</url>
+    </issueManagement>
+    <dependencies>
+        <!-- Add any dependencies here -->
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <id>execute-python-script</id>
+                        <phase>test</phase> <!-- Run the Python script during the 'test' phase -->
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>python</executable> <!-- Specify the Python interpreter -->
+                            <arguments>
+                                <argument>path/to/your/python_script.py</argument> <!-- Path to your Python script -->
+                            </arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
